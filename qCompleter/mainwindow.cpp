@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->lineEdit_saisir, SIGNAL(editingFinished()),
+    connect(ui->lineEdit_saisir, SIGNAL(textChanged(QString)),
                  this,SLOT(afficherConsole()));
 }
 
@@ -29,8 +29,4 @@ void MainWindow::afficherConsole()
     QCompleter *completer = new QCompleter(listPrenom, this);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     ui->lineEdit_saisir->setCompleter(completer);
-
-
-    result = ui->lineEdit_saisir->text();
-    qDebug() << result;
 }
