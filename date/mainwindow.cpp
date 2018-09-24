@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->spinBox->setRange(-100, 100);
 
-    connect(ui->spinBox, SIGNAL(editingFinished()),
+    connect(ui->spinBox, SIGNAL(valueChanged(int)),
                  this,SLOT(afficherDate()));
     connect(ui->calendrier, SIGNAL(clicked(QDate)),
                  this,SLOT(afficherDate()));
@@ -27,12 +27,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::afficherDate()
 {
-    QDate chaine;
-    int value;
-
-    chaine = ui->calendrier->selectedDate();
-    value  = ui->spinBox->value();
-    chaine = chaine.addDays(value);
+    QDate chaine = ui->calendrier->selectedDate();
+    chaine = chaine.addDays(ui->spinBox->value());
 
     ui->calendrier->setSelectedDate(chaine);
     ui->label->setText(chaine.toString());
