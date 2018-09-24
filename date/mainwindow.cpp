@@ -31,9 +31,9 @@ void MainWindow::afficherDate()
     int value;
 
     chaine = ui->calendrier->selectedDate();
-    value =ui->spinBox->value();
+    value  = ui->spinBox->value();
     chaine = chaine.addDays(value);
 
-    ui->label->setText(chaine.toString());
     ui->calendrier->setSelectedDate(chaine);
+    ui->label->setText(chaine.toString());
 }
