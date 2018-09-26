@@ -7,10 +7,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QDir dir = dir.homePath();;
+    QDir dir = dir.homePath();
     QStringList listeFichier = dir.entryList();
 
-    QRegExp exp("\\.[\\w]{3}");
+    QRegExp exp("\\.\\w{3}$");
     foreach ( QString l, listeFichier){
         if ( l.contains(exp) == true)
             qDebug() << l;
