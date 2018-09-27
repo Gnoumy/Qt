@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QString>
 #include <QMainWindow>
+#include <QSqlQueryModel>
+#include <QModelIndex>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QSqlQueryModel *model = new QSqlQueryModel(this);
+private slots:
+    void afficherVilles(QString);
+    void afficherInfos(QModelIndex);
 };
 
 #endif // MAINWINDOW_H
