@@ -6,21 +6,23 @@
 #include <QNetworkReply>
 
 namespace Ui {
-class pollution_widget;
+class pollutionWidget;
 }
 
-class pollution_widget : public QWidget
+class pollutionWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit pollution_widget(QWidget *parent = 0);
-    ~pollution_widget();
+    explicit pollutionWidget(QWidget *parent = 0);
     QNetworkAccessManager *networkManager = new QNetworkAccessManager(this);
+    ~pollutionWidget();
 
 private:
-    Ui::pollution_widget *ui;
+    Ui::pollutionWidget *ui;
+private slots:
     void reponseUrl(QNetworkReply *data);
+    void affichageGraphique();
 };
 
 #endif // POLLUTION_WIDGET_H

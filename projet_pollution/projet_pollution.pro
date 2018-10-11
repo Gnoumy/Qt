@@ -24,10 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    pollution_widget.cpp
+    pollutionwidget.cpp
 
 HEADERS  += mainwindow.h \
-    pollution_widget.h
+    pollutionwidget.h
 
 FORMS    += mainwindow.ui \
-    pollution_widget.ui
+    pollutionwidget.ui

@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 #include <QNetworkReply>
+#include <QNetworkAccessManager>
 
-#include "pollution_widget.h"
+#include "pollutionwidget.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,14 +17,14 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    QNetworkAccessManager *networkManager = new QNetworkAccessManager(this);
+
     ~MainWindow();
 
 private:
     Ui::MainWindow *ui;
 
 private slots:
-    void reponseUrl(QNetworkReply *data);
+
 };
 
 #endif // MAINWINDOW_H
